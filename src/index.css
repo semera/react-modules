@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  background: tomato;
+}
+.main {
+  text-align: left;
+  background: lightblue;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 auto;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .footer {
+    order: 3;
+  }
+}
