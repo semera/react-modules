@@ -19,7 +19,7 @@ function PureComponentNames() {
 
   return (
     <div>
-      <h4>Jsi na billing strance</h4>
+      <h4>Jsi na bill ing strance</h4>
 
       <div>
         first name <input />
