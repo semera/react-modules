@@ -31,6 +31,17 @@ function SubMenu({ name }: SubMenuProps) {
   );
 }
 
+function MyMenuPoint() {
+  return (
+    <span>
+      <img
+        src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Actions-arrow-right-icon.png"
+        className="ikonka"
+      />
+    </span>
+  );
+}
+
 function MyMenu() {
   let mods = Boot.getInstance().Modules;
 
@@ -40,11 +51,20 @@ function MyMenu() {
 
     menu.push(
       <div key={i}>
-        <Link to={"/" + mod.GetMenu().name}>{mod.GetMenu().caption}</Link>
+        <Route path={"/" + mod.GetMenu().name} render={() => MyMenuPoint()} />
+        <Link
+          to={"/" + mod.GetMenu().name}
+          activeClassName="active"
+          activeStyle={{ color: "red" }}
+        >
+          {mod.GetMenu().caption}{" "}
+        </Link>
+        {/** 
         <Route
           path={"/" + mod.GetMenu().name}
           render={() => <SubMenu name={mod.GetMenu().name} />}
-        />
+        /> 
+        **/}
       </div>
     );
   }
@@ -126,11 +146,18 @@ class MyApp extends React.Component {
           <footer className="footer">
             <MyFooter {...cfg} />
           </footer>
+          <Route path="/" exact component={PepaCmp} />
+          <Route component={NotFound} />
         </div>
       </Router>
     );
   }
 }
+
+function NotFound() {
+  return <div>not found</div>;
+}
+
 import { store } from "./redux";
 
 render(

@@ -24,15 +24,15 @@
   background: gold;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 200px) {
   .aside {
     flex: 1 auto;
   }
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 400px) {
   .main {
-    flex: 3 0px;
+    flex: 9 0px;
   }
   .aside-1 {
     order: 1;
@@ -43,4 +43,15 @@
   .footer {
     order: 3;
   }
+}
+
+.active {
+  color: green;
+}
+.ikonka {
+  width: 16px;
+  padding-top: 5px;
+  background-image: (
+    "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Actions-arrow-right-icon.png"
+  );
 }

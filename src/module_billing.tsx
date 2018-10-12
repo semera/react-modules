@@ -32,11 +32,17 @@ function PureComponentNames() {
   );
 }
 
+class Abc extends React.Component {
+  render() {
+    return <h1>aaaa</h1>;
+  }
+}
+
 export default class BillingModule implements ICisModule {
   GetMenu(): IMenuItem {
     return { name: "billing", caption: "Billing Module" };
   }
   GetComponent(): JSX.Element {
-    return <PureComponentNames />;
+    return <Abc />;
   }
 }
